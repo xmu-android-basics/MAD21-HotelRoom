@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/ListFragment">
+
+    <fragment
+        android:id="@+id/ListFragment"
+        android:name="cn.windwood.apps.roompicker.ui.ListFragment"
+        android:label="@string/room_list_fragment_label"
+        tools:layout="@layout/fragment_room_list">
+
+        <action
+            android:id="@+id/action_ListFragment_to_AddFragment"
+            app:destination="@id/AddFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/AddFragment"
+        android:name="cn.windwood.apps.roompicker.ui.AddFragment"
+        android:label="@string/new_room_fragment_label"
+        tools:layout="@layout/fragment_room_add">
+
+        <action
+            android:id="@+id/action_AddFragment_to_ListFragment"
+            app:destination="@id/ListFragment" />
+    </fragment>
+</navigation>
